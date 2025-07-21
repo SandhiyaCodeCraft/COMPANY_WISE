@@ -1,0 +1,17 @@
+2.
+n1=int(input("Enter no of pizzas:"))
+n2=int(input("Enter no of puffs:"))
+n3=int(input("Enter no of drinks:"))
+tp=n1*100
+tpu=n2*20
+td=n3*10
+s=tp+tpu+td
+print("Total price =",s)
+
+3.
+n=int(input())
+s=str(n)
+l=[s[i:i+2] for i in range(0,len(s),2)]
+for i in l:
+    print(i,"-",chr(int(i)))
+
