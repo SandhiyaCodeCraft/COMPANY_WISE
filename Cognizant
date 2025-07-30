@@ -40,7 +40,9 @@ for i in range(1, n + 1):
     total_sum += sum(row)
 print("Sum:", total_sum)
 
-3.
+3.You are playing a game and want to cross as many levels as possible in the game. To advance from one level to another, these are the rules:
+A player has an initial energy N.From level i, you have to spend the highest power of 2, i.e., X, from the current level in order to go to the next level.
+The value of X is then concatenated to the score for each level you cross.Your task is to find and return an integer value representing the final concatenated score by crossing the maximum possible levels with the given initial energy.
 
 import math
 
