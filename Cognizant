@@ -1,3 +1,13 @@
+1.
+l=int(input("Enter the litres to fill the tank:"))
+d=int(input("Enter the distance covered:"))
+fuel = (l/d)*100
+print(f"{fuel:.2f}litres/100KM")
+miles=d*0.6214
+gallon=l*0.2642
+m_g=miles/gallon
+print(f"miles/gallon{m_g:.2f}")
+
 2.
 n1=int(input("Enter no of pizzas:"))
 n2=int(input("Enter no of puffs:"))
@@ -14,6 +24,49 @@ s=str(n)
 l=[s[i:i+2] for i in range(0,len(s),2)]
 for i in l:
     print(i,"-",chr(int(i)))
+
+5.
+import sys..................................EFFICIENT FOR EXIT 
+def total(T,P,R,Co):
+    sum_total=0
+    base_price=T*P....................giving discount on ticket price not on whole price(not including snacks)
+    if R=='y':
+        sum_total+=T*50
+    sum_total+=base_price
+    if T>20:
+        if Co=='y':
+            d_t=(10/100)*base_price
+            base_price-=d_t
+            d_r=(2/100)*base_price
+            discount=d_t+d_r
+        else:
+            discount=(10/100)*base_price
+    else:
+        if Co=='y':
+            discount=(2/100)*base_price
+        else:
+            discount=0
+    return sum_total-discount
+    
+t=int(input("Enter number of tickets:"))
+if(t<5 or t>40):
+    print("Minimum of 5 and Maximum of 40 tickets")
+    sys.exit()
+else:
+    k_p=75
+    q_p=150
+    r=input("Do you want refreshments(y/n):").lower()
+    c=input("Do you have coupon code(y/n):").lower()
+    C=input("Enter the Circle(k/q):").lower()
+    if C=='k':
+        res=total(t,k_p,r,c)
+        print(f"{res:.2f}")
+    elif C=='q':
+        res=total(t,q_p,r,c)
+        print(f"{res:.2f}")
+    else:
+        print("Invalid input")
+        sys.exit()
 
 
 
