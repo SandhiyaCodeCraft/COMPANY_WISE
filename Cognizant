@@ -78,6 +78,15 @@ elif n>=6 and n<=8:
 elif n>=9 and n<=11:
     print("Season:Autumn")
 
+7.
+n=int(input())
+S=list(str(n))
+s=sum([int(i) for i in S])
+if s%3==0 or s%5==0 or s%7==0:
+    print("lucky number")
+else:
+    print("invalid")
+
 
 
 VIDEOS:
