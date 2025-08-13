@@ -167,5 +167,21 @@ class Solution:
         s=sum(nums)
         t=n*(n+1)/2
         return int(t-s)
+7.MERGE TWO SORTED ARRAYS
+8.Kth LARGEST ELEMENT ARRAY 
+
+9.pen change prob:odd:green,even:red......return switch count
+i/p: 72 23 13 26 72 19
+o/p:3
+
+n = int(input())
+l = list(map(int, input().split()))
+s = 0
+for i in range(n - 1):
+    if (l[i] % 2) != (l[i + 1] % 2):  # parity change
+        s += 1
+print(s)
+
+
 
 
