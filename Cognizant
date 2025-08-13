@@ -128,4 +128,44 @@ def highlevel(n):
 n = int(input())
 print(highlevel(n))
 
+4.ANAGRAM OR NOT
+optimised code:
+def anagram(S1,S2):
+    if len(S1)!=len(S2):
+        return False
+    d={}
+    for i in S1:
+        d[i] = d.get(i,0)+1
+    for i in S2:
+        if i not in d or d[i]==0:
+            return False
+        d[i]-=1 //means all letters should be there ,should not be zero
+    return True
+s1 = "liste"
+s2 = "silent"
+S1 = s1.replace(" ","").lower()
+S2 = s2.replace(" ","").lower()
+print(anagram(S1,S2))
+
+5.Palindrome
+
+S=input()
+s=list(S)
+l=0
+r=len(s)-1
+while l<r:
+    s[l],s[r]=s[r],s[l]
+    l+=1
+    r-=1
+print(S==''.join(s))
+
+6.Missing number
+
+class Solution:
+    def missingNumber(self, nums: List[int]) -> int:
+        n=len(nums)
+        s=sum(nums)
+        t=n*(n+1)/2
+        return int(t-s)
+
 
