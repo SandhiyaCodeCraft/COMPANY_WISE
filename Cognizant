@@ -182,6 +182,148 @@ for i in range(n - 1):
         s += 1
 print(s)
 
+10.MAGICAL ROW ---ROW SUM IS EVEN
+
+n=int(input())
+m=int(input())
+l=[]
+for i in range(n):
+    s=list(map(int,input().split()))
+    l.append(s)
+magical=0
+for i in range(n):
+    oddsum=0
+    for j in range(m):
+        oddsum+=l[i][j]
+    if oddsum%2==0:
+        magical+=1
+print(magical)
+
+o/p:n=3,m=3
+    l=[[1,2,3],[4,5,6],[7,8,9]]
+    o/p:2
+
+11.You have a sorted box of numbers stored in an integer array A and you want to find all the "mini boxes" (subarrays) that meet a special rule. 
+This rule says that the sum of the smallest and biggest number in each mini box must be less than or equal to a given number X Remember,
+the original box is already sorted, so the smallest number is always at the beginning, and the biggest one is at the end of each mini box you create.
+Your task is to find and return an integer value representing the number of mini boxes that can be made which follow the rule.
+
+x=int(input())
+arr=list(map(int,input().split()))
+c=0
+for i in range(len(arr)):
+    sub=[]
+    for j in range(i,len(arr)):
+        sub.append(arr[j])
+        l=min(sub)
+        h=max(sub)
+        if l+h <= x:
+            c+=1
+print(c)
+
+o/p:x=5
+    1 3 5 8
+    o/p:2
+
+12.Smart Shopping
+
+You are given an array of N elements representing the prices of each item You are alsos given a discount offer that allows you to buy K items at a reduced price. 
+The discount offer works as, for every most expensive K items you decide to buy, the cost of tise maximum priced item out of those K items will be waived
+Your task is to find and return an integer value representing the total cost after comapplying the maximum discount offer.
+
+inputl: 5
+input2: 3
+input3: 5,7,10,3,2
+Output: 12
+
+Explanation:
+
+Here, the given price array is (5,7,10,3,2) and the value of K = 3. Therefore, we can buy 3 most expensive items to get maximum discount.
+So, we take the items with prices 10+ 7 + 5 = 22. The total cost achievable using the given maximum discount offer is 22-10 12.
+Therefore. 12 is returned as the output.
+
+n=int(input())
+k=int(input())
+arr=list(map(int,input().split()))
+arr.sort(reverse=True)
+dis=max(arr)
+s=0
+for i in range(k):
+    s+=arr[i]
+print("Discounted price:",s-dis)
+
+13.rhythms, Blue Bandit wants the list of prime numbers available in a range of numbers.Can you help him out?
+prime numbers in the interval [a,b] (a and b, both Write a java program to print all prime › print all p inclusiv
+Input 1 should be lesser than Input 2.Both the inputs should be positive.Range must always be greater than zero.
+If any of the condition mentioned above fails, then display "Provide valid input"
+
+import math
+def prime(n):
+    if n<=1:
+        return False
+    for i in range(2,int(math.sqrt(n))+1):
+        if n%i==0:
+            return False
+    return True
+a=int(input())
+b=int(input())
+if a>=0 and b>=0 and a<=b:
+    for i in range(a,b+1):
+        if prime(i)==True:
+            print(i,end=" ")
+else:
+    print("provide valid input")
+
+i/p:2
+    15
+o/p: 2 3 5 7 11 13
+
+14.Reverse pyramid star pattern
+n=int(input())
+for i in range(n):
+    for j in range(i+1):
+        print(" ",end=" ")
+    for j in range(i,n):
+        print("*",end=" ")
+    for j in range(i,n-1):
+        print("*",end=" ")
+    print()
+
+15.FIND TOTAL
+pi=int(input("Enter no of pizzas bought:"))
+pu=int(input("Enter no of puffs bought:"))
+co=int(input("Enter no of cooldrinks bought:"))
+total=(pi*100)+(pu*20)+(co*10)
+print(total)
+
+16.palindrome or not..if negative print invalid input
+n=int(input())
+if n>=0:
+    s=list(str(n))
+    l,r=0,len(s)-1
+    while l<r:
+        s[l],s[r]=s[r],s[l]
+        l+=1
+        r-=1
+    if n==int(''.join(s)):......................dont use str(s) to convert as string it will show error ...it make as "['1','2','3','4']"
+        print("palindrome")
+    else:
+        print("not palindrome")
+else:
+    print("invalid input")
+
+17.BUZZ NUMBER..............ENDS WITH 7 OR DIVISIBLE BY 7
+def divby7(n):
+    if n==0:
+        return True
+    while n>=7:
+        n-=7
+    return n==0
+n=int(input())
+if n%10==7 or divby7(n)==True:
+    print("buzz number")
+else:
+    print("not")
 
 
 
