@@ -325,6 +325,44 @@ if n%10==7 or divby7(n)==True:
 else:
     print("not")
 
+18.You are given an integer array A of length N. In array A, two integers are repeated, meaning two integers appear twice in the array.
+You need to transform the array into a valid permutation of integers from 1 to N using the following operation:
+In each operation, you can choose any element of the array and increase its value by 1.
+Task:
+Find and return an integer representing the minimum number of operations required to convert the array into a valid permutation of size N.
+
+n=int(input())
+l=list(map(int,input().split()))
+l.sort()
+used=set()
+op=0
+for i in range(n):
+    while l[i] in used or l[i]>n:..........use while
+        l[i]+=1
+        op+=1
+    else:
+        used.add(l[i])
+print(op)  
+
+5
+[1,2,1,4,5]
+o/p:1
+
+19.Jack has been interested in numerology for a while and has learned how to calculate a lucky number for word using the rules below:
+Each alphabet in the word has an ASCII value (where ` A' = 65 `` B' = 66 ..., ' Z' = 90, a = 97 etc.).
+Each letter in the word is assigned a 1-based index (i.e., the first letter has index 1, the second let 2, and so on).
+The lucky number is calculated as follows
+1.. Multiply each character's ASCII value by its 1-based index.
+2. Include this product in the sum only if either the index or the ASCII value (or both) are odd.
+
+n=int(input())
+s=input()
+su=0
+for i in range(1,n+1):
+    p=ord(s[i-1])*i
+    if i%2!=0 or (ord(s[i-1]))%2!=0 or (i%2!=0 and (ord(s[i-1]))%2!=0):
+        su+=p
+print(su)
 
 
 
