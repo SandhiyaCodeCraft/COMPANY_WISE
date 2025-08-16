@@ -364,6 +364,34 @@ for i in range(1,n+1):
         su+=p
 print(su)
 
+20. Write a program that checks whether the sum of the first half of an array is less than the sum of the second half. 
+If this condition is met, the program should reverse the entire array. Finally, the program should print the resulting array.
+
+l=list(map(int,input().split()))
+m=len(l)//2
+fir_half=sum(l[:m])
+sec_half=sum(l[m:])
+if fir_half < sec_half:
+    print(l[::-1])
+else:
+    print(l)
+
+5 6 7 8
+o/p:[8,7,6,5]
+
+21.You are given an array of integers containing N elements.
+Your task is to find and return an integer value representing the total number of subarrays of size 3 where the sum of the first element and the third element is equal to the second element.
+
+def subarr(l):
+    c=0
+    for i in range(len(l)-3):
+        sub=l[i:i+3]
+        if sub[1]==sub[0]+sub[2]:
+            c+=1
+    return c
+l=list(map(int,input().split()))
+print(subarr(l))
+
 
 
 
