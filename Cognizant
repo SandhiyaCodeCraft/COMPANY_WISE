@@ -384,7 +384,7 @@ Your task is to find and return an integer value representing the total number o
 
 def subarr(l):
     c=0
-    for i in range(len(l)-3):
+    for i in range(len(l)-2):
         sub=l[i:i+3]
         if sub[1]==sub[0]+sub[2]:
             c+=1
