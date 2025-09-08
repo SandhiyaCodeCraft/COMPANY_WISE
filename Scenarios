@@ -1,0 +1,26 @@
+1.
+You are developing a weather analysis tool for a local meteorological department. Your tool is designed to analyze temperature readings from various days to understand the variation in temperatures over a specific period. 
+The department wants to quantify how much temperatures differ from one day to another. 
+Your task is to find and return an integer value representing the sum of the squares of the differences in temperature readings for every unique pair of days in the given temperature array.
+
+Input Specification:
+ input1 : An integer array representing the temperature reading of a particular day.
+ input2: An integer value representing the size of the array.
+ Output Specification: Return an integer value representing the sum of the squares of the differences in temperature readings for every unique pair of days in the given temperature array.
+
+ Example 1:
+ input1: {1, 2, 3} 
+ input2 : 3
+ Output: 6
+
+import math
+l=list(map(int,input().split()))
+d=set()
+s=0
+for i in range(len(l)):
+    for j in range(i+1,len(l)):
+        sub=(l[i],l[j])
+        if sub not in d:
+            s+=int(math.pow((l[i]-l[j]),2))
+            d.add(sub)
+print(s)
