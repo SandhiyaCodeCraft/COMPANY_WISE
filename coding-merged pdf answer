@@ -1,0 +1,201 @@
+1.COUNT OF CHAR IN A STRING
+s=input()
+n=len(s)
+c=input()
+print(s.count(c))
+  o/p:sandhiya
+      a
+      2
+
+2.#formula H'=H*e^2n...e^n=V/Vn
+input1=int(input())
+input2=int(input())
+input3=int(input())
+e=input2/input3
+res=input1*(e**2)
+print(int(res))
+
+3.
+l=list(map(int,input().split()))
+n=len(l)
+res=""
+for i in l:
+    if i%2==0:
+        res+='even '
+    else:
+        res+='odd '
+print(res)
+
+
+4.PRINT DIFF OF (SUM OF ELEMENTS IN ODD INDEX AND XOR OF ELEMENTS IN EVEN INDEX)
+l=list(map(int,input().split()))
+s=0
+x=0
+for i in range(len(l)):
+    if i%2==0:
+        x^=l[i]
+    else:
+        s+=l[i]
+print(s-x)
+
+5.FIND SUBARRAY OF SIZE 2 WITH SUM 18.AND RETURN THE SUBARRAY WITH MAX PRODDCT IN DESC ORDER.
+import math
+l=list(map(int,input().split()))
+p=0
+res=[]
+for i in range(len(l)-2+1):
+    sub=l[i:i+2]
+    if sum(sub)==18:
+        temp=math.prod(sub)
+        if temp>=p:
+            p=temp
+            res=sub
+print(sorted(res,reverse=True)) 
+
+6.SPECIAL FIBONACCI...........return n index value ...if n=10 means not 10th element 10th thats index element
+n=int(input())
+res=[1,1]
+for i in range(2,n+1):
+    res[i]=((res[i-1]*res[i-1])+(res[i-2]*res[i-2]))%47............this is the formula for element in special series
+print(res[n])
+
+8.SUM OF ELEMENTS OF ARRAY IN EVEN INDES AFTER REVERSING IT
+
+l=list(map(int,input().split()))
+arr=l[::-1]
+s=0
+for i in range(len(arr)):
+    if i%2==0:
+        s+=arr[i]
+print(s)
+
+9.string array S that contains the names of some files along with their versions. is to find and retum an integer value representing the latest version out of all the fil cant correctly named in the array.
+A file is considered correct if it follows the format of the ffe named as "File_X (where X represents the file version number). 
+Return -1 if there are no correct files in the array.
+
+import re
+def pat(arr):
+    max_ver=-1
+    pattern = r"File_(\d+)"
+    if len(arr)==0:
+        return -1
+    else:
+        for i in arr:
+            match=re.match(pattern,i.strip())
+            if match:
+                ver=match.group(1)
+                max_ver=max(max_ver,int(ver))
+        return max_ver
+l=list(map(str,input().split()))
+print(pat(l))
+
+o/p:
+File_1 ,File_2,File_3
+
+11.BOB CHOCLATE PROBLEM.....have to buy one type of choc once only...have to move next one
+
+n=int(input())....no.of.chocolte
+l=list(map(int,input().split()))
+m=int(input())
+s=[i for i in l if i%5!=0]
+if len(s)==0:
+    print(n)
+else:
+    res=n-len(s)
+    for i in sorted(s):
+        m-=i
+        if m<0:
+            break
+        else:
+            res+=1
+    print(res)
+
+13.
+def area(n):
+    A=3.14*n*n
+    r=int(A)
+    if (A-r)>0.5:
+        return int(A)+1
+    else:
+        return int(A)
+n=int(input())
+print(area(n))
+
+o/p:5.....A=78.5 r=78 diff is 0.5 not >0.5 so return int(A)=78
+    78
+
+15.contact name
+  def con(f,l):
+    s=f.lower()+" "+l.upper()
+    return s
+f=input()
+l=input()
+print(con(f,l))
+
+16.single peak..so only one max that is the peak element
+
+return max(input1)
+
+17.sum of prime numbers
+18.REPLACE O WITH 5
+  
+n=int(input())
+x=str(n)
+print(int(x.replace('0','5')))
+
+19.Product Pair
+
+You are given an integer array A of length N and your task is to find and return an integer value representing the count of unique pairs whose products are multiples of 3.
+
+Note: A Unique pair means that the elements must be the same regardless of their order. For instance, (1,3) and (3,1) are considered as the same pair.
+
+import math
+l = list(map(int, input().split()))
+res = set()
+for i in range(len(l)):
+    for j in range(i+1, len(l)):   # check all pairs, not just consecutive
+        sub = [l[i], l[j]]
+        if math.prod(sub) % 3 == 0:
+            res.add(tuple(sorted(sub)))..............use tuple to add in set....sorted mmeans we can avoid duplicates like (1,3),(3,1)
+
+print(len(res))
+22.MOVE OF OPPONENT
+  def move(s):
+    if s=='rock':
+        return 'paper'
+    if s=='paper':
+        return 'scissors'
+    if s=='scissors':
+        return 'rock'
+s=input()
+print(move(s))
+        
+23.NEGATIVE GROWTH
+l=list(map(int,input().split()))
+c=0
+for i in l:
+    if i<0:
+        c+=1
+print(c)
+
+24.Magical Number
+You are given a program to find the count of magical numbers from 1 to N. A magical number is defined by the following criteria:
+Convert each number in the range 1 to N (inclusive) to its binary representation.
+Replace' with '1' and '1' with '2' in the binary string.
+Calculate the sum of the digits in the modified binary string. If the resultant number is odd, then it is considered a magical number.
+Your task is to find and return an integer value representing the count of the magical numbers present within the given range.
+
+n=int(input())
+c=0
+for i in range(1,n+1):
+    b=bin(i)[2:]
+    B=b.replace('0','1').replace('1','2')
+    s=sum([int(i) for i in B])
+    if s%2!=0:
+        c+=1
+print(c)
+
+
+  
+
+
