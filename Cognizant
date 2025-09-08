@@ -429,8 +429,10 @@ for i in l:
     d[i]=d.get(i,0)+1
 print(sorted(l,key=sort_key))
 
-24.i/p:
+24.sort array based oh high freq
+i/p:
     2
+
     5
     5 5 4 6 4
     5
@@ -443,12 +445,25 @@ def sort(l):
     d={}
     for i in l:
         d[i]=d.get(i,0)+1
-    return sorted(l,key=lambda x:(-d[x],x))
+    return sorted(l,key=lambda x:(-d[x],x)).....rule is sorting based on negative number series
 n=int(input())
 for i in range(n):
     N=int(input())
     l=list(map(int,input().split()))
     print(*sort(l))
+
+25.INTERSECTION OF TWO ARRAYS
+
+l1=list(map(int,input().split()))
+l2=list(map(int,input().split()))
+res=[]
+for i in l1:
+    if i in l2:
+        res.append(i)
+if res:
+    print(*res)
+else:
+    print('no common id')
 
 
 
