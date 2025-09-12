@@ -1,0 +1,112 @@
+2.Magical library
+n=int(input())
+m=int(input())
+l=[]
+for i in range(n):
+    li=list(map(int,input().split()))
+    l.append(li)
+c=0
+for i in range(n):
+    s=0
+    for j in range(m):
+        if (l[i][j])%2!=0:
+            s+=l[i][j]
+    if s!=0 and s%2==0:
+        c+=1
+print(c)
+
+3.Alex reading Problem
+
+l=list(map(int,input().split()))
+n=int(input())
+l.sort()
+c=0
+for i in l:
+    if n-i<0:
+        break
+    else:
+        c+=1
+        n=n-i
+print(c)
+
+7.Library book collection
+import math
+def books(n,m,l):
+    def prime(num):
+        if num<=1:
+            return False
+        for i in range(2,int(math.sqrt(num))+1):
+            if num%i==0:
+                return False
+        return True
+    c=0
+    for i in range(1,n+1):
+        if prime(i)==True:
+            if l[i-1]>=m:
+                c+=m
+            else:
+                c+=l[i-1]
+    return c
+n=int(input())
+m=int(input())
+l=list(map(int,input().split()))
+print(books(n,m,l))
+
+8.cryptographyh
+s = input()
+res = ''
+for i in s:
+    if i == 'a':
+        res += 'z'
+    else:
+        res += chr(ord(i) - 1)
+print(res)
+
+1.Minimum prod sum
+
+l1=list(map(int,input().split()))
+l2=list(map(int,input().split()))
+arr1=sorted(l1)
+arr2=sorted(l2,reverse=True)
+s=0
+for i in range(len(l1)):
+    s+=(arr1[i]*arr2[i])
+print(s)
+
+4.password abc10 4
+
+s=input()
+i=0
+j=len(s)-1
+while i<j:
+    if s[i].isalpha() and not s[j].isdigit():
+        j-=1
+    elif s[i].isdigit() and not s[j].isalpha():
+        j-=1
+    else:
+        print(abs(i-j))
+        break
+else:
+    print(0)
+
+5.Chocolate distribution
+
+n=int(input())
+l= [i for i in range(1,n+1) if i%5==0]
+res=set()
+for i in l:
+    left = (i-1)if i>1 else n
+    right =(i+1)if i<n else 1
+    res.add(left)
+    res.add(right)
+s=0
+for i in range(1,n+1):
+    c=0
+    if i in res:
+        c+=(i+2)
+    else:
+        c+=i
+    s+=c
+print(s) 
+
+9.Library Book Sorting
