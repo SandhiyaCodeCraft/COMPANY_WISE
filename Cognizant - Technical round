@@ -24,3 +24,42 @@ for i in range(len(l)):
             s+=int(math.pow((l[i]-l[j]),2))
             d.add(sub)
 print(s)
+
+2.A poet has asked you for assistance in writing poems. He has given you a string S and a dictionary D and he asks you to find, from the dictionary, a word which rhymes best with S. Words are said to rhyme when the last syllables of the words are the same, like "cave" and "gave", or "typical" and "critical." The words will be deemed to rhyme best if the last few characters of the words match the most. Your task is to find and return a string value denoting the word which rhymes best with S, from the dictionary D. If no such word is found, return the string "No Word". 
+Note: If all the characters match, it is the same word and not a rhyming word.
+ • All the given words are in lowercase. • If multiple rhyming words are found, then choose the word with the least index. 
+Input Specification: 
+input1: A string value S, representing a single word
+ input2: A string array D, representing the dictionary
+ input3: An integer value representing the length of array D 
+Output Specification: Return a string value denoting the word which rhymes best with S from the dictionary D. If no such word is found, return the string "No Word". 
+Example 1: 
+input1: thunder 
+input2: (puzzle, thunder, powder, blender, under) 
+input3: 5
+ Output: under 
+
+def rhyme(s,l):
+    def most_rhyme(S,s):
+        i,j=len(S)-1,len(s)-1
+        c=0
+        while i>=0 and j>=0:
+            if S[i]!=s[j]:
+                return c
+            else:
+                c+=1
+                i-=1
+                j-=1
+        return c...................eg. Thunder,under...till under c incremented....and there is no char ..so here c is returned
+    maxi=0
+    res='no word'
+    for i in l:
+        if i!=s:
+            r=most_rhyme(i,s)
+            if r>maxi:............. If multiple rhyming words are found, then choose the word with the least index. 
+                maxi=r
+                res=i
+    return res
+s=input()
+l=list(map(str,input().split()))
+print(rhyme(s,l))
