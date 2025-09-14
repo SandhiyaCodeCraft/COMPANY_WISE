@@ -59,6 +59,24 @@ for i in range(2,n+1):
     res[i]=((res[i-1]*res[i-1])+(res[i-2]*res[i-2]))%47............this is the formula for element in special series
 print(res[n])
 
+7.MAXIMUM PERMUTATION VALUE.........PERMUTATION VALUE OF STRING...>FACTORIAL OF LENGTH OF STRING
+
+import math
+def max_perm_str(l):
+    res=[]
+    for i in l:
+        s=''.join([j for j in i.lower() if j not in 'aeiou'])
+        res.append(s)
+    maxi=0
+    for i in res:
+        if len(i)!=0:
+            f=math.factorial(len(i))
+            maxi=max(maxi,f)
+    return maxi
+            
+l=list(map(str,input().split()))
+print(max_perm_str(l))
+
 8.SUM OF ELEMENTS OF ARRAY IN EVEN INDES AFTER REVERSING IT
 
 l=list(map(int,input().split()))
@@ -91,7 +109,7 @@ print(pat(l))
 
 o/p:
 File_1 ,File_2,File_3
-
+10.REPEATED
 11.BOB CHOCLATE PROBLEM.....have to buy one type of choc once only...have to move next one
 
 n=int(input())....no.of.chocolte
@@ -179,6 +197,7 @@ for i in l:
 print(c)
 
 24.Magical Number
+
 You are given a program to find the count of magical numbers from 1 to N. A magical number is defined by the following criteria:
 Convert each number in the range 1 to N (inclusive) to its binary representation.
 Replace' with '1' and '1' with '2' in the binary string.
