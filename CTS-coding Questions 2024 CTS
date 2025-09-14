@@ -1,1 +1,51 @@
+1.
+import math
+def func(c,n):
+    return math.ceil(n/c)
+c=int(input())
+n=int(input())
+print(func(c,n))
+
+2.MINIMUM ARRAY SUM
+import math
+def func(N,l):
+    s=float('inf')
+    for i in range(len(l)):
+        for j in range(i+1,len(l)):
+            avg=(l[i]+l[j])/2
+            resarr=[i if i>=avg else 0 for i in l]
+            sa=sum(resarr)
+            s=min(s,sa)
+    return s
+N=int(input())
+l=list(map(int,input().split()))
+print(func(N,l))
+
+3.OPERATIONAL SUBSTRING
+no.of substrings with same characters = no.of unique characters in the string
+
+s=input()
+u=[]
+d=[]
+for i in s:
+    if i not in u:
+        u.append(i)
+        d.append(i)
+print(len(u))
+
+4.STRING TRANSFORMATION-COST PROB
+
+s1=input()
+s2=input()
+d={}
+c=0
+for i in s1:
+    d[i]=d.get(i,0)+1
+for i in s2:
+    if d.get(i,0)>0:..........get(i,0).......o means thecharacter is no there ........so 0
+        d[i]-=1
+    else:
+        c+=1
+print(c)
+
 
