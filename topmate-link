@@ -110,3 +110,10 @@ for i in range(1,n+1):
 print(s) 
 
 9.Library Book Sorting
+s=input()
+S=''.join(sorted(s))
+c=0
+for i in range(len(s)):
+    if s[i]!=S[i]:
+        c+=1
+print(c)
