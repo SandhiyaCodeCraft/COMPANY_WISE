@@ -1,1 +1,18 @@
-
+1.
+def nbase(n,num):
+    if num==0:
+        return '0'
+    Res=[]
+    s='0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    while num>0:
+        r=num%n
+        Res.append(s[r])
+        num//=n
+    res=''.join(Res)
+    return res
+n=int(input())
+num=int(input())
+if n<2 or n>36:
+    print('invalid')
+else:
+    print(nbase(n,num)[::-1])
