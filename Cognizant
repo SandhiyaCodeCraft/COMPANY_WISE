@@ -36,7 +36,7 @@ def total(T,P,R,Co):
     if T>20:
         if Co=='y':
             d_t=(10/100)*base_price
-            base_price-=d_t
+            base_price-=d_t//uppdate 
             d_r=(2/100)*base_price
             discount=d_t+d_r
         else:
@@ -78,7 +78,26 @@ elif n>=6 and n<=8:
 elif n>=9 and n<=11:
     print("Season:Autumn")
 
-7.
+7,8 simple
+9.def increment(r,s):
+    if r>=1 and r<=3:
+        inc=(10/100)*s
+    elif r>3 and r<=4:
+        inc=(25/100)*s
+    elif r>4 and r<=5:
+        inc=(30/100)*s
+    else:
+        inc=0
+    return inc
+s=float(input())
+r=float(input())
+if s<=0 or (r<=0 or r>5):
+    print("invalid input")
+else:
+    res=increment(r,s)
+    print(s+res)
+
+10.
 n=int(input())
 S=list(str(n))
 s=sum([int(i) for i in S])
