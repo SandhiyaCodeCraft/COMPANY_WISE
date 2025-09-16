@@ -1,1 +1,10 @@
-
+1.
+def calculate_waiting_time(N, X):
+   if N <= 1:...........o
+    return 0
+  
+  completion_previous_job = (N - 1) * 10
+  arrival_of_last_job = (N - 1) * X
+  waiting_time = max(0,completion_previous_jobs - arrival_of_last_job)
+  
+  return waiting_time
