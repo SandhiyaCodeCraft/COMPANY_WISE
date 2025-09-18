@@ -23,5 +23,124 @@ for i,j in zip(missing,Dup):
     s+=(i-j)
 print(s)
 
+7.
+l=list(map(int,input().split()))
+max_sum=0
+sub=[]
+for i in range(len(l)):
+    sub.append(l[i])
+    temp=sum(sub)
+    max_sum=max(max_sum,temp)
+print(max_sum)
+
+12.
+n=int(input())
+m=int(input())
+A=list(map(int,input().split()))
+B=list(map(int,input().split()))
+max_b=0
+for i in range(len(B)):
+    for j in range(i+1,len(B)):
+        sub=(B[i],B[j])
+        if sum(sub)<=m:
+            temp=A[i]+A[j]
+            max_b=max(max_b,temp)
+print(max_b)
+
+14.
+
+n=int(input())
+m=int(input())
+l=list(map(int,input().split()))
+l.sort()
+c=0
+s=0
+for i in l:
+    if s+i<=m:
+        s=s+i
+        c+=1
+print(c)
+
+17.
+import math
+def isprime(n):
+    if n<=1:
+        return False
+    for i in range(2,int(math.sqrt(n))+1):
+        if n%i==0:
+            return False
+    return True
+n=int(input())
+k=int(input())
+l=list(map(int,input().split()))
+s=0
+for i in range(1,n+1):
+    if isprime(i)==True:
+        if l[i-1]>=k:
+            s+=k
+        else:
+            s+=l[i-1]
+print(s)
+
+21.
+
+n=int(input())
+l=list(map(int,input().split()))
+arr=list(sorted(set(l),reverse=True))
+rs=sum(arr[:n])
+print(rs-arr[0])
+
+24.
+import math
+def isprime(n):
+    if n<=1:
+        return False
+    for i in range(2,int(math.sqrt(n))+1):
+        if n%i==0:
+            return False
+    return True
+n=int(input())
+res=set()
+for i in range(1,n+1):
+    if n%i==0 and isprime(i)==True:
+        res.add(i)
+print(sum(res))
+
+25.
+l=list(map(int,input().split()))
+res=sorted([i for i in l if i>0])
+m=len(res)//2
+if len(res)%2!=0:
+    print(res[m])
+else:
+    print((res[m]+res[m-1])//2)
+
+28.
+total = 0
+    for char in s:
+        total += ord(char)
+    return total
+
+29.
+from collections import Counter
+
+def frequency_sort(arr):
+    freq = Counter(arr)
+    sorted_arr = sorted(arr, key=lambda x: (-freq[x], x))
+    return sorted_arr
+
+31.
+s=input()
+S=s.split()
+res=' '.join([i[::-1]for i in S])
+print(res)
+
+36.
+from collections import Counter
+s=input()
+d=Counter(s)
+max=max(d.values())
+res=[i for i in s if d[i]==max]
+print(res[0]) 
 
     
