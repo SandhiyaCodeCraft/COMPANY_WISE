@@ -1,0 +1,39 @@
+1.
+n = 4  
+k = 4
+l = [5, 7, 8, 10]  
+
+total_books = sum(l)  
+full_shelves = total_books // k 
+print(full_shelves)
+
+2.
+n = int(input())
+k = int(input())
+l = list(map(int, input().split()))
+
+l.sort()  # sort ascending by weight
+
+c = 0
+s = 0
+for weight in l:
+    if s + weight <= k:
+        s += weight
+        c += 1
+    else:
+        break
+
+print(c)
+
+last qn:
+n=int(input())
+l=list(map(int,input().split()))
+odd=[]
+even=[]
+for i in l:
+    if i%2!=0:
+        odd.append(i)
+    else:
+        even.append(i)
+m=min(len(odd),len(even))
+print(2*m)..............max st to be included in both grps
