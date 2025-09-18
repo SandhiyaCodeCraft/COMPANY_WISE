@@ -1,1 +1,27 @@
+2.
+s=input()
+c=0
+for i in range(len(s)-1):
+    if s[i]==s[i+1]:
+        c+=1
+print(c)
 
+3.....................correct approach
+n=int(input())
+l=list(map(int,input().split()))
+u=[]
+d=[]
+missing=sorted([i for i in range(1,n+1) if i not in l])
+for i in l:
+    if i not in u:
+        u.append(i)
+    else:
+        d.append(i)
+Dup=sorted(d)
+s=0
+for i,j in zip(missing,Dup):
+    s+=(i-j)
+print(s)
+
+
+    
