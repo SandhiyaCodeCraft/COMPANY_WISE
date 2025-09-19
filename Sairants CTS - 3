@@ -1,0 +1,64 @@
+1.
+def skipcount(N,A):
+    sc=0
+    stack=[]
+    i=0
+    while i<N:
+        c=0
+        while stack and stack[-1]<=A[i]:..............if incoming bigger means add count ...check until it become small
+            stack.pop()
+            c+=1
+        else:
+            stack.append(A[i])
+        sc+=c
+        i+=1
+    return sc
+N=int(input())
+l=list(map(int,input().split()))
+print(skipcount(N,l))
+
+2.
+n=int(input())
+N=abs(n)
+if N==0:
+    print('no factors')
+else:
+    for i in range(1,N+1):
+        if N%i==0:
+            print(i,end=" ")
+
+4.
+n = int(input().strip())   # number of products
+
+products = []
+for _ in range(n):
+    item = input().strip().split(",")
+    name = item[0]
+    price = int(item[1])
+    discount = int(item[2])
+    saving = (price * discount) // 100
+    products.append((name, saving))
+
+min_saving = min(p[1] for p in products)
+
+for name, saving in products:
+    if saving == min_saving:
+        print(name)
+
+10.
+num1=int(input())
+num2=int(input())
+cc=0
+c=0
+while num1>0 or num2>0:........any one digit can be 0 we r just adding 
+    d1=num1%10
+    d2=num2%10
+    t=d1+d2+c
+    if t>9:
+        cc+=1
+        c=1
+    else:
+        c=0
+    num1//=10
+    num2//=10
+print(cc)
