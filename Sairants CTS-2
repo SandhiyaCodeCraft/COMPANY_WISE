@@ -65,7 +65,7 @@ for i in res:
         c+=1
 print(c)
 
-5.
+4.
 s = input()
 c = 0
 tem = ''
@@ -80,11 +80,30 @@ for i in range(len(s)):
             if start > 0 and s[start-1].isalpha() and s[i].isalpha():
                 c += 1
         tem = ''
-
-# if string ends with digits, ignore (no letter after)
-
 print(c)
 
 i/p:
 Input: "a2a3b12ac"
 Output: 2 
+
+1.
+
+def solve(N, X):
+    A = list(range(1, N + 1))...............creating list
+    B = []
+    for i in range(N):
+        if i == N - 1:
+            B.append(A[i] + A[0])
+        else:
+            B.append(A[i] + A[i + 1]
+    total_sum = sum(num for num in B if num % X == 0)
+    
+    return total_sum
+
+2.
+ count = 0
+    for i in range(len(S1) - K + 1):
+        substring = S1[i:i+K]................they are already unique no need to be create set
+        if substring in S2:..............we dont neeed to collect substring of s2...instead we can check in s2
+            count += 1
+    return count
