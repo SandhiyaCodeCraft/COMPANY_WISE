@@ -106,7 +106,31 @@ if s%3==0 or s%5==0 or s%7==0:
 else:
     print("invalid")
 
+12.
+n=int(input())
+res=float('inf')
+it=''
+for i in range(n):
+    val=input().split(',')
+    item=val[0]
+    price=int(val[1])
+    dis=int(val[2])
+    discount=(price*dis)//100
+    if discount<res:
+        res=discount
+        it=item
+print(it)
 
+15........................given array is price for each day....initialy 0.....summing price since first day..
+eg:in the loop 4th day price is calculated by adding prices from first day....then only we can calculate todsay price is low or not.
+n = int(input())
+changes = list(map(int, input().split()))
+price = 0
+min_price = 0 
+for c in changes:
+    price += c
+    min_price = min(min_price, price)
+print(min_price)
 
 VIDEOS:
 1.Return the count if left + right = that element in array
