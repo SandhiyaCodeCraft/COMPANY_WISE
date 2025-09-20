@@ -8,3 +8,71 @@ def calculate_waiting_time(N, X):
   waiting_time = max(0,completion_previous_jobs - arrival_of_last_job)
   
   return waiting_time
+9.
+def count_dates_in_range(num_entries, dates_list, start_date, end_date):
+    count = 0
+    start_day, start_month, start_year = map(int, start_date.split('-'))
+    end_day, end_month, end_year = map(int, end_date.split('-'))
+    
+    for date_str in dates_list:
+        day, month, year = map(int, date_str.split('-'))
+        if year < start_year or year > end_year:
+            continue
+        if year == start_year:
+            if month < start_month:
+                continue
+            if month == start_month and day < start_day:
+                continue
+        if year == end_year:
+            if month > end_month:
+                continue
+            if month == end_month and day > end_day:
+                continue
+        count += 1
+    
+    return count
+
+7.
+l = list(map(int, input().split()))
+d = int(input())
+n = len(l)
+s = 0
+
+for i in range(n):
+    le = i - d
+    r = i + d
+    is_tall = True
+
+    if le >= 0 and l[i] <= l[le]:.................these are the only two conditions that makes the condition false if that d pos building exist....if there is no building no problem
+        is_tall = False
+    if r < n and l[i] <= l[r]:
+        is_tall = False
+
+    if is_tall:
+        s += l[i]
+print(s)
+
+heights = [1, 3, 2, 1, 5, 4]
+D = 2
+Output: 12
+....here example :5 is > 2 and there is no element prsent right of 5 that is no prob ....if exists that should satsify the condition
+
+6.
+    for i in range(input2):
+        for j in range(i + 1, input2):
+            if ord(input1[i]) + ord(input1[j]) == input3:
+                return input1[i] + input1[j]
+    return "-1"
+
+5.
+    if not text or len(text) <= 1:
+        return 0
+
+    total_distance = 0
+    for i in range(1, len(text)):
+        prev_pos = ord(text[i-1]) - ord('a')
+        current_pos = ord(text[i]) - ord('a')
+        total_distance += abs(current_pos - prev_pos)
+    return total_distance
+0 based index keyboard is: a-0,b-1,c-3....index...that can be get by ord(ch-->b)-ord('a')=1...b=1
+
