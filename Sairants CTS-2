@@ -107,3 +107,31 @@ def solve(N, X):
         if substring in S2:..............we dont neeed to collect substring of s2...instead we can check in s2
             count += 1
     return count
+
+3.
+def is_subsequence(small, big):
+    i,j=0,0
+    while i < len(small) and j < len(big):
+        if small[i] == big[j]:
+            i += 1
+        j += 1
+    return i == len(small)
+
+def check_contained(s1, s2):
+    w1 = s1.split()
+    w2 = s2.split()
+
+    res1 = is_subsequence(w1, w2)  
+    res2 = is_subsequence(w2, w1)  
+
+    if res1 and res2:
+        return s1 if len(w1) <= len(w2) else s2
+    elif res1:
+        return s1
+    elif res2:
+        return s2
+    else:
+        return "NONE"
+s1 = input().strip()
+s2 = input().strip()
+print(check_contained(s1, s2))
