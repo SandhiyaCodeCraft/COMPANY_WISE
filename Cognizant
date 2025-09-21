@@ -1,3 +1,40 @@
+2025:
+1.string tank
+def find_tank(water):
+    total_water = sum([float(x) for x in water])
+    left_sum = 0
+    for i in range(len(water)):
+        right_sum = total_water - left_sum - float(water[i])
+        if left_sum == right_sum:
+            return i  
+        left_sum += float(water[i])
+    return -1  
+
+water = ["0.6", "0.7", "0.3", "0.4", "0.9"]
+result = find_tank(water)
+print(f"Tank at index {result} satisfies the condition")
+
+2.MAZE QN
+def find_unreachable_or_loop(A, S):
+    visited = set()
+    index = S
+    direction = 1  # Start by moving right
+
+    while True:
+        if index in visited:
+            return -1  # Loop detected
+
+        visited.add(index)
+        steps = A[index]
+        next_index = index + direction * steps
+
+        if next_index < 0 or next_index >= len(A):
+            return A[index]  # Return current value before move
+
+        index = next_index
+        direction *= -1  # Alternate direction
+
+
 1.
 l=int(input("Enter the litres to fill the tank:"))
 d=int(input("Enter the distance covered:"))
