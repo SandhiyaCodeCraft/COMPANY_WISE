@@ -168,6 +168,42 @@ for i in range(len(l)):
         res=min(sub).........y min is ...now only she take eq bulbs from the consecutive machines
         maxb=max(maxb,res)
 print(maxb)
+
+o(N)...................max(l)
+
+21.
+rows = int(input())
+cols = int(input())
+arr = list(map(int, input().split()))
+mat=[]
+for i in range(rows):............................creating matrix using arr
+    mat.append(arr[i*cols : (i+1)*cols])
+rs=[sum(i) for i in mat]
+cs=[]
+for j in range(cols):
+    sc=0
+    for i in range(rows):
+        sc+=mat[i][j]
+    cs.append(sc)
+print(max(rs)+max(cs))
+
+22.
+.......................this code works for n<=20......small numbers only
+def cal(n,r,m):
+    def fact(n):
+        fact=1
+        for i in range(1,n+1):
+            fact*=i
+        return fact
+    nf=fact(n)
+    rf=fact(r)
+    nrf=fact(n-r)
+    res=nf//(rf*nrf)
+    return res%m
+n=int(input())
+r=int(input())
+m=int(input())
+print(cal(n,r,m))
 VIDEOS:
 1.Return the count if left + right = that element in array
 
