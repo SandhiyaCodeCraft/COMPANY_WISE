@@ -8,7 +8,107 @@ def calculate_waiting_time(N, X):
   waiting_time = max(0,completion_previous_jobs - arrival_of_last_job)
   
   return waiting_time
-9.
+LONGEST COMMON SUBSTRING:
+def lcs_length(X, Y):
+    m, n = len(X), len(Y)
+    dp = [[0]*(n+1) for _ in range(m+1)]
+    
+    for i in range(1, m+1):
+        for j in range(1, n+1):
+            if X[i-1] == Y[j-1]:
+                dp[i][j] = dp[i-1][j-1] + 1
+            else:
+                dp[i][j] = max(dp[i-1][j], dp[i][j-1])
+    
+    return dp[m][n]............accessing directly the last value
+
+# Example
+X = "AGGTAB"
+Y = "GXTXAYB"
+print(lcs_length(X, Y))  # Output: 4
+
+LONGEST COMMON SUBSTRING RETURING STRING O/P:
+
+def lcs(X, Y):
+    m, n = len(X), len(Y)
+    dp = [[0]*(n+1) for _ in range(m+1)]
+    for i in range(1, m+1):
+        for j in range(1, n+1):
+            if X[i-1] == Y[j-1]:
+                dp[i][j] = dp[i-1][j-1] + 1
+            else:
+                dp[i][j] = max(dp[i-1][j], dp[i][j-1])
+    i, j = m, n
+    lcs_str = []
+    while i > 0 and j > 0:
+        if X[i-1] == Y[j-1]:
+            lcs_str.append(X[i-1])
+            i -= 1
+            j -= 1
+        elif dp[i-1][j] > dp[i][j-1]:
+            i -= 1
+        else:
+            j -= 1
+    
+    lcs_str.reverse()  
+    return ''.join(lcs_str)
+X = "AGGTAB"
+Y = "GXTXAYB"
+O/p:GTAB
+
+LONGEST COMMON SUBSTRING - CONTIGUOUS
+def longest_common_substring(X, Y):
+    m, n = len(X), len(Y)
+    dp = [[0]*(n+1) for _ in range(m+1)]
+    
+    max_len = 0
+    end_index = 0  
+    
+    for i in range(1, m+1):
+        for j in range(1, n+1):
+            if X[i-1] == Y[j-1]:
+                dp[i][j] = dp[i-1][j-1] + 1
+                if dp[i][j] > max_len:
+                    max_len = dp[i][j]
+                    end_index = i
+            else:
+                dp[i][j] = 0
+    lcs_substring = X[end_index - max_len:end_index]
+    return max_len, lcs_substring
+
+X = "ABCDGH"
+Y = "ACDGHR"
+3
+CDG
+
+
+2.......................they cost for insertion only .......so formula for insertion=len(s2)-lcs...lcs means the dp table value
+def fnn(s1,s2):
+    count=0
+    dp=[[0 for _ in range(len(s2)+1)] for _ in range(len(s1)+1)]
+    for i in range(1,len(s1)+1):
+        for j in range(1,len(s2)+1):
+            if s1[i-1]==s2[j-1]:
+                dp[i][j]= dp[i-1][j-1]+1
+            else:
+                dp[i][j]=max(dp[i-1][j],dp[i][j-1])
+    count= len(s2) - dp[len(s1)][len(s2)].....fetching last value
+    return count
+
+3...............in this prob both insertion and deletion count asked...del=len(s1)-lcs,insertion=len(s2)-lcs
+def fnn(s1,s2):
+    count=0
+    dp=[[0 for _ in range(len(s2)+1)] for _ in range(len(s1)+1)]
+    for i in range(1,len(s1)+1):
+        for j in range(1,len(s2)+1):
+            if s1[i-1]==s2[j-1]:
+                dp[i][j]= dp[i-1][j-1]+1
+            else:
+                dp[i][j]=max(dp[i-1][j],dp[i][j-1])
+    count= len(s1)+len(s2) -2* dp[len(s1)][len(s2)]
+    return count
+
+8.
 def count_dates_in_range(num_entries, dates_list, start_date, end_date):
     count = 0
     start_day, start_month, start_year = map(int, start_date.split('-'))
