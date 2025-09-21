@@ -729,6 +729,11 @@ print(c)
 
 
 COGNIZANT NEXT PDF ADVANCED:
+14.
+import math
+n=int(input())
+print(round(math.sqrt(n)))
+
 20.
 l=list(map(int,input().split()))
 m=0
@@ -767,9 +772,41 @@ while True:
     else:
         i -= m
     c += 1
+23.
+def maxpass(marks,p=50,m=100):
+    b=m-max(marks)
+    final=[]
+    for i in marks:
+        res=i+b
+        final.append(min(res,m))
+    c=0
+    for i in final:
+        if i>=p:
+            c+=1
+    return c
+marks=list(map(int,input().split()))
+print(maxpass(marks))
 
 
+yotube:
+you are given an array A of size N consisting of integers and you ha to determine a hop vatue H by following the conditions below
+You start at index D
+From index, the next index in the sequence is i + H
+All elements in the selected sequence must be even.
+The hop value H must be the smallest possible value that satisfies the above conditions.
+Your task is to find and return an integer value representing the small hop value H. If no such hop value exists, return -1.
 
 
-
+hop = 1
+while hop<n:
+    valid = 1
+    i = 0
+    while i<n:
+        if(arr[i]%2==1):
+            valid = 0
+            break
+    if valid ==1:
+        return hop
+    hop+=1
+return -1
 
