@@ -132,6 +132,42 @@ for c in changes:
     min_price = min(min_price, price)
 print(min_price)
 
+17.X...means a person we want to find his siblings.........
+def find_siblings(N, arr, X):
+    if X not in arr:
+        return [-1] 
+    index = arr.index(X)
+    if index == 0:.................0 th indexis root person there is no sibling ...only child
+        return [-1]
+    
+    parent = (index - 1) // 2..........parent index
+    siblings = []
+    
+    left = 2 * parent + 1...........using parent index find the childs
+    right = 2 * parent + 2
+    if left < N and arr[left] != X:.............append the child except x
+        siblings.append(arr[left])
+    if right < N and arr[right] != X:
+        siblings.append(arr[right])
+    if not siblings:
+        return [-1]............no sibling means return -1
+    return sorted(siblings)
+
+print(find_siblings(5, [1,2,3,4,5], 1))  
+print(find_siblings(5, [1,2,3,4,5], 2)) 
+print(find_siblings(5, [1,2,3,4,5], 4)) 
+
+20.....o(N^2) this approach....if arr not sorted ...sort it......she start from anywhere and end anywhere
+n=int(input())
+l=list(map(int,input().split()))
+maxb=0
+for i in range(len(l)):
+    sub=[]
+    for j in range(i,len(l)):
+        sub.append(l[j])
+        res=min(sub).........y min is ...now only she take eq bulbs from the consecutive machines
+        maxb=max(maxb,res)
+print(maxb)
 VIDEOS:
 1.Return the count if left + right = that element in array
 
