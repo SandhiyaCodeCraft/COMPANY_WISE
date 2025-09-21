@@ -704,6 +704,32 @@ for i in range(len(l)):
             m=max(m,res)
 print(m)
 
+21.find no of step need to reach last index...starting at index 0 ..if element is pos move forward m steps or move back m steps
+l = list(map(int, input().split()))
+m = int(input())
+
+i = 0
+c = 0
+visited = set()
+
+while True:
+    if i < 0 or i >= len(l):   # out of bounds
+        print(-1)
+        break
+    if i == len(l) - 1:        # reached last index
+        print(c)
+        break
+    if i in visited:           # loop detected
+        print(-1)
+        break
+
+    visited.add(i)
+
+    if l[i] > 0:
+        i += m
+    else:
+        i -= m
+    c += 1
 
 
 
