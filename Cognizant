@@ -678,6 +678,18 @@ if res:
 else:
     print('no common id')
 
+26.
+1a2b3c4d5
+4
+alphabets are items....digits are pacaging lines....count how many items are wrapped by packaging liness
+
+s=input()
+c=0
+for i in range(1,len(s)-1):
+    if s[i].isalpha() and s[i-1].isdigit() and s[i+1].isdigit():
+        c+=1
+print(c)
+
 
 COGNIZANT NEXT PDF ADVANCED:
 20.
