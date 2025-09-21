@@ -204,6 +204,92 @@ n=int(input())
 r=int(input())
 m=int(input())
 print(cal(n,r,m))
+
+23.
+def derangement(n):
+    if n == 0:
+        return 1
+    if n == 1:
+        return 0
+
+    prev2 = 1  # !0
+    prev1 = 0  # !1
+
+    for i in range(2, n+1):
+        current = (i-1) * (prev1 + prev2)
+        prev2 = prev1
+        prev1 = current
+
+    return prev1
+
+n = 3
+print(derangement(n))  # Output: 2
+
+24.
+  words = sentence.split()
+    cnt = 0
+    for w in words:
+        if not w:
+            continue
+        k = N % len(w)
+        rotated = w[-k:] + w[:-k]   # right rotation by k
+        if rotated == w:
+            cnt += 1
+    return cnt
+
+26
+nums = [1, 1, 4, 2, 3], x = 5 o/p:2..............................from the last 5-3=2...2-2=0 so ans:2..............logic is ...find the value res=sum(l)-x=6...
+then find the longest subarray of sum =6 ...find the max length of subarr of sum=6...and return the ans by print(len(l)-m)....m is length of long sub with sum=6
+
+l=list(map(int,input().split()))
+x=int(input())
+res=sum(l)-x
+m=0
+for i in range(len(l)):
+    sub=[]
+    for j in range(i,len(l)):
+        sub.append(l[j])
+        if sum(sub)==res:
+            m=max(m,len(sub))
+if m==0:
+    print('-1')
+else:
+    print(len(l)-m)
+
+27.
+dic = {}
+l = 0
+ml = 0
+
+for r in range(len(s)):
+    c = s[r]
+    if c in dic and dic[c] >= l:
+        l = dic[c] + 1
+    dic[c] = r
+    ml = max(ml, r - l + 1)
+
+return ml
+
+29.container with most
+   l=0
+        r=len(height)-1
+        max_water=0
+        while l<r:
+            w=(r-l)
+            h=min(height[l],height[r])
+            cm=w*h
+            max_water=max(max_water,cm)
+            if height[l]<height[r]:
+                l+=1
+            else:
+                r-=1
+        return max_water
+
+28.
+flat_list = [num for row in matrix for num in row]
+    flat_list.sort()
+    return flat_list[k-1]
+
 VIDEOS:
 1.Return the count if left + right = that element in array
 
@@ -579,6 +665,20 @@ if res:
     print(*res)
 else:
     print('no common id')
+
+
+COGNIZANT NEXT PDF ADVANCED:
+20.
+l=list(map(int,input().split()))
+m=0
+for i in range(len(l)):
+    for j in range(len(l)):
+        if l[i]==l[j]:
+            res=0
+        else:
+            res=abs(l[i]-l[j])+abs(i-j)
+            m=max(m,res)
+print(m)
 
 
 
