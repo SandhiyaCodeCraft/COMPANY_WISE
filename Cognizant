@@ -157,6 +157,18 @@ print(find_siblings(5, [1,2,3,4,5], 1))
 print(find_siblings(5, [1,2,3,4,5], 2)) 
 print(find_siblings(5, [1,2,3,4,5], 4)) 
 
+19.
+def mod11(num_str):
+    remainder = 0
+    for digit in num_str:
+        remainder = (remainder * 10 + int(digit)) % 11
+    return remainder
+
+# Example
+num_str = "13589234356546756"
+print(mod11(num_str))  # Output: 6
+
+
 20.....o(N^2) this approach....if arr not sorted ...sort it......she start from anywhere and end anywhere
 n=int(input())
 l=list(map(int,input().split()))
