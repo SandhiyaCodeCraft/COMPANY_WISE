@@ -43,14 +43,15 @@ import math
 l=list(map(int,input().split()))
 p=0
 res=[]
-for i in range(len(l)-2+1):
-    sub=l[i:i+2]
-    if sum(sub)==18:
-        temp=math.prod(sub)
-        if temp>=p:
-            p=temp
-            res=sub
-print(sorted(res,reverse=True)) 
+for i in range(len(l)):
+    for j in range(i+1,len(l)):
+        sub=[l[i],l[j]]
+        if sum(sub)==18:
+            temp=math.prod(sub)
+            if temp>=p:
+                p=temp
+                res=sub
+print(sorted(res,reverse=True))
 
 6.SPECIAL FIBONACCI...........return n index value ...if n=10 means not 10th element 10th thats index element
 n=int(input())
@@ -112,21 +113,21 @@ File_1 ,File_2,File_3
 10.REPEATED
 11.BOB CHOCLATE PROBLEM.....have to buy one type of choc once only...have to move next one
 
-n=int(input())....no.of.chocolte
+n=int(input())
 l=list(map(int,input().split()))
 m=int(input())
-s=[i for i in l if i%5!=0]
-if len(s)==0:
+res=[i for i in l if i%5!=0]
+res.sort()
+c=n-len(res)
+s=0
+if len(res)==0:
     print(n)
 else:
-    res=n-len(s)
-    for i in sorted(s):
-        m-=i
-        if m<0:
-            break
-        else:
-            res+=1
-    print(res)
+    for i in res:
+        if s+i<=m:
+            s+=i
+            c+=1
+    print(c)
 12.Done already
 13.
 def area(n):
@@ -193,19 +194,17 @@ for i in range(len(l)):
 
 print(len(res))
 20.CHOCOLATE JAR
+import math
 l=list(map(int,input().split()))
-A=0
+c=0
 for i in l:
     if i==0:
         continue
-    elif i<=3:
-        A+=1
-    else:
-        if i%3==0:
-            A+=(i//3)
-        else:
-            A+=(i//3)+1
-print(A)
+    if i==3:
+        c+=1
+    if i>3:
+        c+=(math.ceil(i/3))
+print(c)
 
 21.
 f=int(input())
