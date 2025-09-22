@@ -16,6 +16,20 @@ for i in range(n):
 print(c)
 
 3.Alex reading Problem
+l=list(map(int,input().split()))
+n=int(input())
+l.sort()
+c=0
+s=0
+for i in l:
+    if i+s<=n:
+        s+=i
+        c+=1
+    else:
+        break
+print(c)
+
+or
 
 l=list(map(int,input().split()))
 n=int(input())
