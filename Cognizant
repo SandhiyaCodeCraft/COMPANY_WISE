@@ -209,14 +209,13 @@ print(mod11(num_str))  # Output: 6
 20.....o(N^2) this approach....if arr not sorted ...sort it......she start from anywhere and end anywhere
 n=int(input())
 l=list(map(int,input().split()))
-maxb=0
+sub=[]
+m=0
 for i in range(len(l)):
-    sub=[]
-    for j in range(i,len(l)):
-        sub.append(l[j])
-        res=min(sub).........y min is ...now only she take eq bulbs from the consecutive machines
-        maxb=max(maxb,res)
-print(maxb)
+    sub.append(l[i])
+    res=min(sub)*len(sub)
+    m=max(m,res)
+print(m)
 
 o(N)...................max(l)
 
