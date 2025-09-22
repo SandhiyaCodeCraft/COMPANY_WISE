@@ -419,6 +419,26 @@ class Solution:
         return int(t-s)
 7.MERGE TWO SORTED ARRAYS
 8.Kth LARGEST ELEMENT ARRAY 
+8.MAX SUM IN CONTIGUOUS ARRAY:
+n=int(input())
+l=list(map(int,input().split()))
+m=-1
+for i in range(len(l)):
+    sub=[]
+    for j in range(i,len(l)):
+        sub.append(l[j])
+        res=sum(sub)
+        m=max(m,res)
+print(m)
+
+8.Duplicates in array
+n=int(input())
+l=list(map(int,input().split()))
+d={}
+for i in l:
+    d[i]=d.get(i,0)+1
+res= [i for i,j in d.items() if j>1]
+print(*res)
 
 9.pen change prob:odd:green,even:red......return switch count
 i/p: 72 23 13 26 72 19
@@ -444,7 +464,8 @@ magical=0
 for i in range(n):
     oddsum=0
     for j in range(m):
-        oddsum+=l[i][j]
+        if (l[i][j])%2!=0:
+           oddsum+=l[i][j]
     if oddsum%2==0:
         magical+=1
 print(magical)
@@ -517,7 +538,7 @@ def prime(n):
     return True
 a=int(input())
 b=int(input())
-if a>=0 and b>=0 and a<=b:
+if a>0 and b>0 and a<b:
     for i in range(a,b+1):
         if prime(i)==True:
             print(i,end=" ")
@@ -726,6 +747,52 @@ for i in range(1,len(s)-1):
     if s[i].isalpha() and s[i-1].isdigit() and s[i+1].isdigit():
         c+=1
 print(c)
+
+27.Bulb Factory
+n=int(input())
+l=list(map(int,input().split()))
+C=int(input())
+res=[]
+le=0
+ts=sum([i for i in l])
+for i in range(n):
+    r=ts-le-l[i]
+    if le+r > C:
+        res.append(C)
+    else:
+        res.append(le+r)
+    le+=l[i]
+print(res)
+
+28...........string expansion based on index a-1,b-2.....
+s=input()
+d={}
+S=set()
+for i in range(len(s)):
+    if s[i] not in S:
+        d[s[i]]=i+1
+        S.add(s[i])
+res=[]
+for i in s:
+    res.append(i*d[i])
+print('-'.join(res))
+
+29.
+i/p:
+bad
+o/p:2
+
+s=input()
+sum=0
+for i in range(1,len(s)):
+    p=ord(s[i-1])-ord('a')+1
+    c=ord(s[i])-ord('a')+1
+    sum+=(c-p)
+print(sum)
+
+30.
+To find distance after S minutes
+speed*S*(S+1)/2
 
 
 COGNIZANT NEXT PDF ADVANCED:
